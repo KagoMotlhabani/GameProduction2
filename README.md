@@ -1,0 +1,1 @@
+These Four Walls: Mind Wipe is a 3D mystery physics-based game that takes place in hospital. The player will go through a series of rooms in order to escape the facility and discover the the truth about their past. 
