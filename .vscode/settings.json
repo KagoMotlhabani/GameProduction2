@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Game Production 2 ME 1.sln"
+    "dotnet.defaultSolution": "GameProduction2_MindWipe.sln"
 }
