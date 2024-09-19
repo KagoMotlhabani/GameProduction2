@@ -1284,7 +1284,6 @@ MonoBehaviour:
   playerSpeed: 5
   gravityValue: -9.8
   jumpHeight: 1
-  jumpCooldown: 1
   verticalMovement: 0
   horizontalMovement: 0
 --- !u!114 &885051829
@@ -1516,9 +1515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55225fb29ec73264d8e9bc1c46eee1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 885051825}
-  camDelay: 0.125
-  offset: {x: 0, y: 2, z: -7}
+  orientation: {fileID: 457541333}
+  camFollowDelay: 0.125
+  camRotationDelay: 0.02
+  offset: {x: 0, y: 1, z: -4}
 --- !u!1 &1121177229
 GameObject:
   m_ObjectHideFlags: 0

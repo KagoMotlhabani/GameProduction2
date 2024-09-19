@@ -5,19 +5,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    //public float Xsensetivity;
-    //public float Ysensetivity;
-    //public float Xrotation;
-    //public float Yrotation;
     public Transform orientation;//player
-    public float camDelay = 0.125f;
+    public float camFollowDelay = 0.125f;
+    public float camRotationDelay = 0.02f;
     public Vector3 offset;
+    //public Vector3 rotationOffset;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
 
     }//end start
 
@@ -25,22 +21,11 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         Vector3 playerPosition = orientation.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(this.transform.position, playerPosition, camDelay);
+        Vector3 smoothedPosition = Vector3.Lerp(this.transform.position, playerPosition, camFollowDelay);
         this.transform.position = smoothedPosition;
 
-
-        //this attaches the camera to the curser and allows it to rotate when the mouse rotates
-        /*
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * Xsensetivity;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * Ysensetivity;
-
-        Yrotation += mouseX;
-        Xrotation -= mouseY;
-        Xrotation = Mathf.Clamp(Xrotation, -90f, 90f);
-
-        transform.rotation = Quaternion.Euler(Xrotation, Yrotation, 0);
-        orientation.rotation = Quaternion.Euler(0, Yrotation, 0);
-        */
+        //the camera will face the same direction as the player
+        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, orientation.rotation, camRotationDelay);
 
 
     }//end update
