@@ -47,9 +47,13 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
+        //If the player is moving, set the forward direction to the direction of move
         if (move != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            Quaternion rotationTarget = Quaternion.LookRotation(move);
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotationTarget, rotationSpeed * Time.deltaTime);
+            //gameObject.transform.forward = move;
+
         }
         //Player facing
         playerVelocity = orientation.forward * verticalMovement + orientation.right * horizontalMovement;

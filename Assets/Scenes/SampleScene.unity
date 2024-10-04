@@ -1478,7 +1478,7 @@ MonoBehaviour:
   groundPlay: 0
   jumpForce: 10
   playerSpeed: 5
-  rotationSpeed: 2
+  rotationSpeed: 5
   gravityValue: -9.8
   jumpHeight: 1
   verticalMovement: 0
@@ -3604,7 +3604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.044983, y: -132}
+  m_AnchoredPosition: {x: 6.044922, y: -132}
   m_SizeDelta: {x: 12.09, y: 174.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781198719
@@ -3923,7 +3923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.5, z: 0.3}
+  Damping: {x: 0.1, y: 0.5, z: 2}
   ShoulderOffset: {x: 0.5, y: -0.4, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
