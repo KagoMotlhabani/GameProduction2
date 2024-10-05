@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+ main
     public Transform orientation;//player
     public float camFollowDelay = 0.125f;
     public float camRotationDelay = 0.02f;
