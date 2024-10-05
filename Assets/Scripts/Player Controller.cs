@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     public bool groundPlay;
     public float jumpForce = 1.0f;
     public float playerSpeed = 5.0f;
+    public float rotationSpeed = 2.0f;
     public float gravityValue = -9.8f;
-    public float jumpHeight = 1;
+    public float jumpHeight = 1.0f;
     //public float jumpCooldown;
     public float verticalMovement;
     public float horizontalMovement;
@@ -46,9 +47,13 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
+        //If the player is moving, set the forward direction to the direction of move
         if (move != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            Quaternion rotationTarget = Quaternion.LookRotation(move);
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotationTarget, rotationSpeed * Time.deltaTime);
+            //gameObject.transform.forward = move;
+
         }
         //Player facing
         playerVelocity = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
@@ -56,7 +61,7 @@ public class PlayerController : MonoBehaviour
         //Jump Code
         if (Input.GetButtonDown("Jump") && groundPlay)
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
 
